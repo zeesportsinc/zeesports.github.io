@@ -1,0 +1,413 @@
+/* =========================================
+   Zee Sports Factory - Custom CSS
+   ========================================= */
+
+/* Variables */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #1a1a1a;
+    --accent-color: #e63946; /* Strong Athletic Red */
+    --accent-hover: #c1121f;
+    --light-bg: #2180e0;
+    --text-color: #333333;
+    --heading-font: 'Oswald', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--body-font);
+    color: #000000; /* Text color ko white kar diya */
+    background-color: #000000; /* Website ka background black kar diya */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+.text-danger {
+    color: var(--accent-color) !important;
+}
+
+.bg-danger {
+    background-color: var(--accent-color) !important;
+}
+
+.btn-danger {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-danger:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.95);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8);
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    /* HERO BACKGROUND IMAGE WITH GRADIENT OVERLAY */
+    background: linear-gradient(#d60f0fb3, rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 80px; /* Navbar space spacing */
+}
+
+.hero-content {
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Logo Above Text Styling */
+.hero-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-img {
+    max-height: 110px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(230, 57, 70, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.hero-logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(231, 94, 3, 0.1) !important;
+}
+
+.product-img-wrapper {
+    overflow: hidden;
+}
+
+.product-card img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Process Section */
+.process-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px dashed #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.process-icon:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+/* Feature Boxes */
+.feature-box {
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    border-bottom: 3px solid var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   Team Section CSS
+   ========================================= */
+.team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.team-img-wrapper img {
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-img-wrapper img {
+    transform: scale(1.08); /* Hover par image halka sa zoom hogi */
+}
+
+.social-btn-team {
+    width: 35px; 
+    height: 35px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-btn-team:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white !important;
+}
+
+
+/* Gallery Lightbox */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(230, 57, 70, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Lightbox Modal CSS */
+.lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 3px solid #fff;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-lightbox:hover {
+    color: var(--accent-color);
+}
+
+/* Contact Details */
+.social-btn {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+}
+.social-btn:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white !important;
+}
+
+/* Footer */
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Scroll Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* =========================================
+   Snowfall Animation CSS
+   ========================================= */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Bohat zaroori: Is se barf ke peechay mojood buttons click ho sakenge */
+    z-index: 9999; /* Taa ke barf har cheez ke upar nazar aaye */
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    background: rgb(4, 0, 255);
+    border-radius: 50%;
+    top: -10px;
+    animation: fall linear infinite;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Halki si chamak (glow) ke liye */
+}
+
+/* Girne ka effect (Neechay aur thoda sa side par) */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) translateX(0);
+    }
+    100% {
+        transform: translateY(110vh) translateX(20px);
+    }
+}
+/* =========================================
+   3D Wave Preloader Styling
+   ========================================= */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.preloader-hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+    background: transparent;
+    width: calc(var(--i) * 2.5vmin);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid rgb(0, 255, 13);
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animateWave 5s ease-in-out calc(var(--i) * 0.08s) infinite;
+    box-shadow: 0 0 15px rgb(124, 124, 124),
+                inset 0 0 15px rgb(124, 124, 124);
+}
+
+@keyframes animateWave {
+    0%, 100% {
+        transform: rotateX(70deg) translateZ(50px) translateY(0);
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Exit Intent Modal Styling */
+#exitModal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3) !important;
+}
+
+#exitModal .btn-close:focus {
+    box-shadow: none;
+}
+
